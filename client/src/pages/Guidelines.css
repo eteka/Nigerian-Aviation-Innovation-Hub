@@ -1,0 +1,95 @@
+.guidelines-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.guidelines-header h1 {
+  color: #1a472a;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.guidelines-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.guideline-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.guideline-card:hover {
+  border-color: #1a472a;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.guideline-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.guideline-card h2 {
+  color: #1a472a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.guideline-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.read-more {
+  color: #1a472a;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.guideline-card:hover .read-more {
+  color: #2d6a3e;
+}
+
+.guidelines-footer {
+  margin-top: 3rem;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+  border-left: 4px solid #1a472a;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.info-box h3 {
+  color: #1a472a;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+}

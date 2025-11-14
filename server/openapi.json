@@ -1,0 +1,348 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Nigeria Aviation Innovation Hub API",
+    "description": "API for the Nigeria Aviation Innovation Hub platform that connects aviation innovators with regulators and resources to develop new technologies safely and sustainably.\n\n## Authentication\nThis API uses session-based authentication with cookies. After successful login, a session cookie is set that must be included in subsequent requests.\n\n## CSRF Protection\nAll mutation operations (POST, PUT, DELETE) require a CSRF token:\n1. Get a CSRF token from `GET /api/v1/csrf`\n2. Include the token in the `X-CSRF-Token` header\n\n## Rate Limiting\n- General endpoints: 100 requests per 15 minutes\n- Auth endpoints: 20 requests per 15 minutes",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Nigeria Aviation Innovation Hub",
+      "url": "http://localhost:3000"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/api",
+      "description": "Development server"
+    }
+  ],
+  "security": [
+    {
+      "cookieAuth": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "cookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "sessionId",
+        "description": "Session cookie for authentication"
+      },
+      "csrfToken": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-CSRF-Token",
+        "description": "CSRF token required for mutations"
+      }
+    },
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "john.doe@example.com"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["innovator", "regulator"],
+            "example": "innovator"
+          }
+        },
+        "required": ["id", "name", "email", "role"]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "example": "VALIDATION_ERROR"
+              },
+              "message": {
+                "type": "string",
+                "example": "Invalid input data"
+              }
+            },
+            "required": ["code", "message"]
+          },
+          "requestId": {
+            "type": "string",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        },
+        "required": ["error", "requestId"]
+      },
+      "HealthStatus": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "ok"
+          },
+          "requestId": {
+            "type": "string",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        },
+        "required": ["status", "requestId"]
+      },
+      "CSRFToken": {
+        "type": "object",
+        "properties": {
+          "csrfToken": {
+            "type": "string",
+            "example": "a1b2c3d4e5f6..."
+          },
+          "requestId": {
+            "type": "string",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        },
+        "required": ["csrfToken", "requestId"]
+      }
+    }
+  },
+  
+"paths": {
+    "/v1/health": {
+      "get": {
+        "tags": ["Health"],
+        "summary": "Health check endpoint",
+        "description": "Returns the health status of the API",
+        "responses": {
+          "200": {
+            "description": "API is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/csrf": {
+      "get": {
+        "tags": ["Security"],
+        "summary": "Get CSRF token",
+        "description": "Generates a CSRF token for use in mutation requests. Sets an XSRF-TOKEN cookie and returns the token value.",
+        "responses": {
+          "200": {
+            "description": "CSRF token generated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSRFToken"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Register new user",
+        "description": "Create a new user account with optional admin privileges",
+        "security": [
+          {
+            "csrfToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 100,
+                    "example": "John Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "minLength": 8,
+                    "example": "securepassword123"
+                  },
+                  "adminRequested": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "adminKey": {
+                    "type": "string",
+                    "example": "admin-secret-key"
+                  }
+                },
+                "required": ["name", "email", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User registered successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Registration successful"
+                    },
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid admin key or CSRF token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "User login",
+        "description": "Authenticate user and create session",
+        "security": [
+          {
+            "csrfToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "securepassword123"
+                  }
+                },
+                "required": ["email", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Login successful"
+                    },
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Health",
+      "description": "System health and status endpoints"
+    },
+    {
+      "name": "Security",
+      "description": "Security-related endpoints (CSRF tokens)"
+    },
+    {
+      "name": "Auth",
+      "description": "Authentication and user management"
+    },
+    {
+      "name": "Projects",
+      "description": "Project submission and management"
+    },
+    {
+      "name": "Admin",
+      "description": "Administrative functions (regulator only)"
+    },
+    {
+      "name": "Audit",
+      "description": "Audit trail and logging"
+    }
+  ]
+}

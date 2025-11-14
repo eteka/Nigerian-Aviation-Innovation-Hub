@@ -1,0 +1,131 @@
+.guideline-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  color: #1a472a;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #2d6a3e;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+  border-radius: 12px;
+}
+
+.detail-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-header h1 {
+  color: #1a472a;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.detail-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.detail-content p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.support-section {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.support-section h2 {
+  color: #1a472a;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.support-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.support-list li {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: #f8faf9;
+  border-left: 4px solid #1a472a;
+  border-radius: 4px;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.support-list li:hover {
+  background: #e8f5e9;
+  transform: translateX(4px);
+}
+
+.support-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #1a472a 0%, #2d6a3e 100%);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cta-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.cta-section .btn-primary {
+  background: white;
+  color: #1a472a;
+  padding: 0.875rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.cta-section .btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
