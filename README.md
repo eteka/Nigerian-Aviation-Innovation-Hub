@@ -14,8 +14,57 @@ A web platform connecting aviation innovators in Nigeria with regulators and res
 
 - **Backend**: Node.js + Express
 - **Frontend**: React + Vite
-- **Database**: SQLite (planned)
+- **Database**: SQLite (development/test) / PostgreSQL (production)
 - **Routing**: React Router
+- **Security**: JWT, CSRF protection, rate limiting, input validation
+
+## Database Configuration
+
+The application supports **dual database modes**:
+
+- **Development/Test**: SQLite (automatic, no configuration needed)
+- **Production**: PostgreSQL (requires configuration)
+
+The database is automatically selected based on `NODE_ENV`:
+
+| Environment | Database | Auto-configured |
+|-------------|----------|-----------------|
+| `development` | SQLite | ✅ Yes |
+| `test` | SQLite (in-memory) | ✅ Yes |
+| `production` | PostgreSQL | ⚙️ Requires setup |
+
+### Quick Start - Development (SQLite)
+
+```bash
+# Copy environment file
+cp .env.development .env
+
+# Install and run (database auto-created)
+npm install
+npm run dev
+```
+
+### Production Setup (PostgreSQL)
+
+```bash
+# 1. Create .env file with PostgreSQL connection
+NODE_ENV=production
+DATABASE_URL=postgresql://user:password@host:5432/aviation_hub
+JWT_SECRET=your-secure-secret-key
+INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_PASSWORD=SecurePassword123!
+
+# 2. Run migrations
+npm run db:migrate
+
+# 3. Create initial admin user
+npm run db:seed:prod
+
+# 4. Start production server
+npm start
+```
+
+📖 **Full database documentation**: See [DATABASE.md](./DATABASE.md) for detailed setup instructions, cloud deployment guides, and troubleshooting.
 
 ## Project Structure
 
@@ -65,29 +114,136 @@ npm install
 cd ..
 ```
 
+3. Configure environment variables:
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env with your configuration
+# For development, you can use .env.development as a reference
+```
+
+### Database Configuration
+
+The application supports two database modes:
+
+#### Development Mode (SQLite)
+- **Default for**: `NODE_ENV=development` or `NODE_ENV=test`
+- **Database file**: `server/aviation-hub.db`
+- **No additional configuration needed**
+- Tables are created automatically on first run
+
+**Environment variables (.env.development)**:
+```env
+NODE_ENV=development
+JWT_SECRET=dev-secret-key-not-for-production
+PORT=3000
+```
+
+#### Production Mode (PostgreSQL)
+- **Required for**: `NODE_ENV=production`
+- **Database**: PostgreSQL 12+
+- **Configuration required**: Set DATABASE_URL or individual DB parameters
+
+**Environment variables (.env.production)**:
+```env
+NODE_ENV=production
+
+# Option 1: Use DATABASE_URL (recommended for cloud platforms)
+DATABASE_URL=postgresql://username:password@hostname:5432/aviation_hub
+
+# Option 2: Use individual parameters
+DB_HOST=your-postgres-host.com
+DB_PORT=5432
+DB_NAME=aviation_hub
+DB_USER=your_db_user
+DB_PASSWORD=your_secure_password
+DB_SSL=true
+
+# JWT Secret (generate with: node -e "console.log(require('crypto').randomBytes(64).toString('hex'))")
+JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long
+
+# Initial admin setup
+INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_PASSWORD=SecurePassword123!
+INITIAL_ADMIN_NAME=System Administrator
+
+PORT=3000
+CORS_ORIGIN=https://yourdomain.com
+```
+
+### Database Setup
+
+#### Development (SQLite)
+No setup needed - database is created automatically when you start the server.
+
+#### Production (PostgreSQL)
+
+1. **Create PostgreSQL database**:
+```bash
+# Using psql
+createdb aviation_hub
+
+# Or via SQL
+psql -U postgres -c "CREATE DATABASE aviation_hub;"
+```
+
+2. **Run migrations**:
+```bash
+NODE_ENV=production npm run db:migrate
+```
+
+3. **Seed initial admin user**:
+```bash
+NODE_ENV=production npm run db:seed:prod
+```
+
+This creates an initial regulator admin using the credentials from your `.env` file.
+
 ### Running the Application
 
-#### Option 1: Run both servers concurrently
+#### Development Mode (SQLite)
+
+**Option 1: Run both servers concurrently**
 ```bash
 npm run dev
 ```
 
-#### Option 2: Run servers separately
+**Option 2: Run servers separately**
 
 Terminal 1 - Backend (port 5000):
 ```bash
 npm run server
+# or
+npm run start:dev
 ```
 
-Terminal 2 - Frontend (port 3000):
+Terminal 2 - Frontend (port 5173):
 ```bash
 npm run client
 ```
 
+#### Production Mode (PostgreSQL)
+
+```bash
+# Ensure environment is configured
+export NODE_ENV=production
+
+# Run migrations (first time only)
+npm run db:migrate
+
+# Seed initial admin (first time only)
+npm run db:seed:prod
+
+# Start the server
+npm start
+```
+
 ### Access the Application
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000/api
+- **Frontend**: http://localhost:5173 (dev) or http://localhost:3000 (prod)
+- **Backend API**: http://localhost:5000/api
+- **API Documentation**: http://localhost:5000/api/docs
 
 ## Development Roadmap
 
