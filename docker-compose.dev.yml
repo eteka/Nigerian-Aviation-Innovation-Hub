@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: aviation-hub-db-dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: aviation_hub_dev
+      POSTGRES_USER: aviation_user
+      POSTGRES_PASSWORD: dev_password_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aviation_user -d aviation_hub_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - aviation-network
+
+  # Adminer - Database Management UI
+  adminer:
+    image: adminer:latest
+    container_name: aviation-hub-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    depends_on:
+      - db
+    networks:
+      - aviation-network
+
+  # API Server (Node.js/Express)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: aviation-hub-api-dev
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://aviation_user:dev_password_123@db:5432/aviation_hub_dev
+      JWT_SECRET: dev-secret-key-not-for-production
+      PORT: 5000
+      CORS_ORIGIN: http://localhost:3000
+    volumes:
+      - ./server:/app/server
+      - ./scripts:/app/scripts
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - aviation-network
+    command: sh -c "npm run db:migrate && npm run server"
+
+  # Web Client (Vite/React)
+  web:
+    image: node:18-alpine
+    container_name: aviation-hub-web-dev
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_BASE: http://localhost:5000
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - aviation-network
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 3000"
+
+volumes:
+  pgdata_dev:
+    name: aviation-hub-pgdata-dev
+
+networks:
+  aviation-network:
+    name: aviation-network-dev
+    driver: bridge

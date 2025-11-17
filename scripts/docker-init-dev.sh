@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+echo "🚀 Starting development environment..."
+echo ""
+echo "🌐 Application URLs:"
+echo "   Frontend:  http://localhost:3000"
+echo "   API:       http://localhost:5000"
+echo "   API Docs:  http://localhost:5000/api/docs"
+echo "   Adminer:   http://localhost:8080"
+echo ""
+echo "📊 Database Connection (Adminer):"
+echo "   System:   PostgreSQL"
+echo "   Server:   db"
+echo "   Username: aviation_user"
+echo "   Password: dev_password_123"
+echo "   Database: aviation_hub_dev"
+echo ""
+echo "✨ Hot reload is enabled for both frontend and backend"
+echo "📝 Edit files and see changes automatically!"

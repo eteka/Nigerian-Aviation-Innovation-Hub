@@ -95,6 +95,27 @@ The API documentation is available via Swagger UI when the server is running. It
 
 ## Getting Started
 
+### Option 1: Docker (Recommended)
+
+🐳 **Easiest way to run the application with all dependencies**
+
+```bash
+# Development environment (with hot reload)
+npm run docker:dev:up
+
+# Access:
+# - Frontend: http://localhost:3000
+# - API: http://localhost:5000
+# - Adminer: http://localhost:8080
+
+# Stop services
+npm run docker:dev:down
+```
+
+📖 **Full Docker guide**: See [DOCKER.md](./DOCKER.md) for production deployment, troubleshooting, and advanced usage.
+
+### Option 2: Local Installation
+
 ### Prerequisites
 
 - Node.js (v16 or higher)

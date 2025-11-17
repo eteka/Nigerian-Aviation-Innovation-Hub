@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: aviation-hub-db-prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME:-aviation_hub}
+      POSTGRES_USER: ${DB_USER:-aviation_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Database password required}
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-aviation_user} -d ${DB_NAME:-aviation_hub}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - aviation-network
+
+  # API Server (Node.js/Express)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: aviation-hub-api-prod
+    restart: always
+    ports:
+      - "${API_PORT:-5000}:5000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://${DB_USER:-aviation_user}:${DB_PASSWORD}@db:5432/${DB_NAME:-aviation_hub}
+      JWT_SECRET: ${JWT_SECRET:?JWT secret required}
+      PORT: 5000
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost}
+      COOKIE_SECURE: "true"
+      INITIAL_ADMIN_EMAIL: ${INITIAL_ADMIN_EMAIL:-admin@aviation.gov.ng}
+      INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD:-ChangeMe123!}
+      INITIAL_ADMIN_NAME: ${INITIAL_ADMIN_NAME:-System Administrator}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - aviation-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Web Client (Nginx serving built React app)
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: aviation-hub-web-prod
+    restart: always
+    ports:
+      - "${WEB_PORT:-80}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - aviation-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  pgdata_prod:
+    name: aviation-hub-pgdata-prod
+
+networks:
+  aviation-network:
+    name: aviation-network-prod
+    driver: bridge

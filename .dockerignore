@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+client/node_modules
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Build outputs
+client/dist
+client/build
+
+# Test files
+test-*.js
+*-test.js
+*.test.js
+*.spec.js
+
+# CI/CD
+.github
+
+# Kiro
+.kiro

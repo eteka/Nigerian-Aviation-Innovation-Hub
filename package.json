@@ -11,7 +11,14 @@
     "db:seed:prod": "node scripts/seed-prod.js",
     "db:test": "node test-db-abstraction.js",
     "start": "cross-env NODE_ENV=production node server/index.js",
-    "start:dev": "cross-env NODE_ENV=development node server/index.js"
+    "start:dev": "cross-env NODE_ENV=development node server/index.js",
+    "docker:dev:up": "docker-compose -f docker-compose.dev.yml up -d && node -e \"setTimeout(() => require('child_process').execSync('sh scripts/docker-init-dev.sh', {stdio: 'inherit'}), 3000)\"",
+    "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:dev:logs": "docker-compose -f docker-compose.dev.yml logs -f",
+    "docker:prod:build": "docker-compose -f docker-compose.prod.yml build",
+    "docker:prod:up": "docker-compose -f docker-compose.prod.yml up -d && docker-compose -f docker-compose.prod.yml exec -T api sh scripts/docker-init-prod.sh",
+    "docker:prod:down": "docker-compose -f docker-compose.prod.yml down",
+    "docker:prod:logs": "docker-compose -f docker-compose.prod.yml logs -f"
   },
   "keywords": [
     "aviation",
