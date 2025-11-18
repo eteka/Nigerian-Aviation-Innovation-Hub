@@ -1,0 +1,66 @@
+{
+  "name": "Nigeria Aviation Innovation Hub",
+  "description": "Aviation Innovation Hub connecting innovators with regulators in Nigeria",
+  "repository": "https://github.com/eteka/Nigerian-Aviation-Innovation-Hub",
+  "services": [
+    {
+      "name": "api",
+      "type": "web",
+      "runtime": "nodejs",
+      "buildCommand": "npm ci",
+      "startCommand": "npm run db:migrate && npm run db:seed:prod && npm start",
+      "healthcheckPath": "/health",
+      "env": {
+        "NODE_ENV": {
+          "description": "Node environment",
+          "value": "production"
+        },
+        "PORT": {
+          "description": "Port for the API server",
+          "value": "5000"
+        },
+        "JWT_SECRET": {
+          "description": "Secret key for JWT tokens (generate with: node -e \"console.log(require('crypto').randomBytes(64).toString('hex'))\")",
+          "required": true
+        },
+        "INITIAL_ADMIN_EMAIL": {
+          "description": "Email for the initial admin user",
+          "required": true
+        },
+        "INITIAL_ADMIN_PASSWORD": {
+          "description": "Password for the initial admin user",
+          "required": true
+        },
+        "INITIAL_ADMIN_NAME": {
+          "description": "Name for the initial admin user",
+          "value": "System Administrator"
+        },
+        "ALLOW_FIRST_ADMIN": {
+          "description": "Allow first user to become admin",
+          "value": "true"
+        },
+        "COOKIE_SECURE": {
+          "description": "Use secure cookies (HTTPS only)",
+          "value": "true"
+        },
+        "CORS_ORIGIN": {
+          "description": "Frontend URL for CORS (update after deploying frontend)",
+          "value": "https://your-app.vercel.app"
+        }
+      }
+    },
+    {
+      "name": "postgres",
+      "type": "database",
+      "engine": "postgresql",
+      "version": "16"
+    }
+  ],
+  "links": [
+    {
+      "from": "api",
+      "to": "postgres",
+      "env": "DATABASE_URL"
+    }
+  ]
+}

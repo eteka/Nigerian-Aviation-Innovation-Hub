@@ -2,6 +2,18 @@
 
 A web platform connecting aviation innovators in Nigeria with regulators and resources to develop new technologies safely and sustainably.
 
+## 🚀 Quick Deploy
+
+### One-Click Deploy to Production
+
+**Backend (Railway):**
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/Nigerian-Aviation-Innovation-Hub)
+
+**Frontend (Vercel):**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eteka/Nigerian-Aviation-Innovation-Hub&project-name=aviation-hub&root-directory=client&env=VITE_API_BASE)
+
+📖 **Full deployment guide**: [RAILWAY-DEPLOY.md](./RAILWAY-DEPLOY.md)
+
 ## Features
 
 - User registration and authentication for innovators

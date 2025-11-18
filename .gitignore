@@ -7,6 +7,8 @@ client/node_modules/
 .env.local
 .env.production
 .env.docker.prod
+.env.railway.generated
+.env.vercel.generated
 
 # Build outputs
 client/dist/

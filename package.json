@@ -18,7 +18,8 @@
     "docker:prod:build": "docker-compose -f docker-compose.prod.yml build",
     "docker:prod:up": "docker-compose -f docker-compose.prod.yml up -d && docker-compose -f docker-compose.prod.yml exec -T api sh scripts/docker-init-prod.sh",
     "docker:prod:down": "docker-compose -f docker-compose.prod.yml down",
-    "docker:prod:logs": "docker-compose -f docker-compose.prod.yml logs -f"
+    "docker:prod:logs": "docker-compose -f docker-compose.prod.yml logs -f",
+    "deploy:config": "node scripts/generate-deploy-config.js"
   },
   "keywords": [
     "aviation",
