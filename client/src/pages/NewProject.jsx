@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { projectAPI } from '../utils/api';
 import './NewProject.css';
 
 const CATEGORIES = ['Aircraft Tech', 'Operations', 'Sustainable Fuel', 'Offsets'];
+
+const DEMO_DATA = {
+  title: 'Electric VTOL Aircraft for Urban Transport',
+  description: 'Developing a zero-emission vertical take-off and landing aircraft for urban air mobility in Lagos. The aircraft features advanced battery technology, autonomous flight capabilities, and meets ICAO noise reduction standards. This innovation aims to reduce traffic congestion while maintaining environmental sustainability.',
+  category: 'Aircraft Tech'
+};
 
 function NewProject() {
   const navigate = useNavigate();
@@ -14,6 +20,17 @@ function NewProject() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [demoMode, setDemoMode] = useState(false);
+
+  useEffect(() => {
+    // Check if demo mode is active
+    const isDemoMode = localStorage.getItem('demoMode') === 'true';
+    setDemoMode(isDemoMode);
+    
+    if (isDemoMode) {
+      setFormData(DEMO_DATA);
+    }
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -48,6 +65,12 @@ function NewProject() {
       <div className="new-project-container">
         <h1>Submit New Project</h1>
         <p className="subtitle">Share your aviation innovation with regulators and the community</p>
+
+        {demoMode && (
+          <div className="demo-banner">
+            ✨ Demo Mode Active - Form pre-filled with sample data
+          </div>
+        )}
 
         {error && <div className="error-message">{error}</div>}
 
