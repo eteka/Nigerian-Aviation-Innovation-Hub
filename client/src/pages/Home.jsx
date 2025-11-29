@@ -129,7 +129,7 @@ function Home() {
             <a href="https://github.com/eteka/Nigerian-Aviation-Innovation-Hub" target="_blank" rel="noopener noreferrer">
               📦 GitHub Repository
             </a>
-            <a href="http://localhost:5000/api/docs" target="_blank" rel="noopener noreferrer">
+            <a href={`${import.meta.env.VITE_API_BASE || 'http://localhost:5000'}/api/docs`} target="_blank" rel="noopener noreferrer">
               📚 API Documentation
             </a>
             <Link to="/guidelines">📋 Guidelines</Link>

@@ -58,7 +58,7 @@ function Signup() {
       
       if (adminRequested) {
         registrationData.adminRequested = true;
-        if (hasAdmin || !process.env.ALLOW_FIRST_ADMIN) {
+        if (hasAdmin || !import.meta.env.VITE_ALLOW_FIRST_ADMIN) {
           registrationData.adminKey = adminKey;
         }
       }
