@@ -50,7 +50,7 @@ node check-user-role.js
 2. Click "Get Started" card
 3. Sign up with:
    - Name: Admin User
-   - Email: admin@aviation.gov.ng
+   - Email: admin@example.com
    - Password: Admin123!
    - ✓ Check "Request Admin Access"
 4. You're now logged in as a regulator
@@ -79,7 +79,7 @@ node check-user-role.js
 
 **4. Test Admin Features (as Regulator)**
 ```
-1. Log in as admin@aviation.gov.ng
+1. Log in as admin@example.com
 2. Click "Admin Dashboard" card
 3. You can:
    - View all projects
@@ -133,7 +133,7 @@ npm run docker:dev:down
 **Method 2: Production Seed Script**
 ```bash
 # Set environment variables
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 
 # Run seed script
@@ -374,7 +374,7 @@ CORS_ORIGIN=http://localhost:3000
 NODE_ENV=production
 DATABASE_URL=postgresql://user:password@host:5432/aviation_hub
 JWT_SECRET=<64-character-random-string>
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 PORT=5000
 CORS_ORIGIN=https://yourdomain.com

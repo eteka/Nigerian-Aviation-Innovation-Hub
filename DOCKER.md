@@ -165,7 +165,7 @@ DB_PASSWORD=your_secure_password_here
 JWT_SECRET=your-64-character-random-string
 
 # Initial Admin
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 INITIAL_ADMIN_NAME=System Administrator
 

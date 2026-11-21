@@ -61,7 +61,7 @@ async function smokeTest() {
       console.log('      ○ No admin found, creating first admin...');
       
       // Create first admin using ALLOW_FIRST_ADMIN flow
-      const adminEmail = `admin${Date.now()}@aviation.gov.ng`;
+      const adminEmail = `admin${Date.now()}@example.com`;
       const adminPassword = 'AdminPass123!';
       
       const csrfToken = await getCSRFToken();
@@ -106,7 +106,7 @@ async function smokeTest() {
     } else {
       // Create a test admin for smoke testing
       console.log('      Creating test admin for smoke test...');
-      adminEmail = `smoketest${Date.now()}@aviation.gov.ng`;
+      adminEmail = `smoketest${Date.now()}@example.com`;
       adminPassword = 'SmokeTest123!';
       
       try {

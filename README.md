@@ -63,7 +63,7 @@ npm run dev
 NODE_ENV=production
 DATABASE_URL=postgresql://user:password@host:5432/aviation_hub
 JWT_SECRET=your-secure-secret-key
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 
 # 2. Run migrations
@@ -197,7 +197,7 @@ DB_SSL=true
 JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long
 
 # Initial admin setup
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 INITIAL_ADMIN_NAME=System Administrator
 

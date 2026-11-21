@@ -36,7 +36,7 @@ services:
       PORT: 5000
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost}
       COOKIE_SECURE: "true"
-      INITIAL_ADMIN_EMAIL: ${INITIAL_ADMIN_EMAIL:-admin@aviation.gov.ng}
+      INITIAL_ADMIN_EMAIL: ${INITIAL_ADMIN_EMAIL:-admin@example.com}
       INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD:-ChangeMe123!}
       INITIAL_ADMIN_NAME: ${INITIAL_ADMIN_NAME:-System Administrator}
     depends_on:

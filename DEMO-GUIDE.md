@@ -39,7 +39,7 @@
 2. Click "Get Started"
 3. Sign up:
    - Name: Admin User
-   - Email: admin@aviation.gov.ng
+   - Email: admin@example.com
    - Password: Admin123!
    - ✓ Check "Request Admin Access"
 
@@ -153,7 +153,7 @@
 
 | Role | Email | Password | Access |
 |------|-------|----------|--------|
-| Regulator | admin@aviation.gov.ng | Admin123! | Full admin access |
+| Regulator | admin@example.com | Admin123! | Full admin access |
 | Innovator | john@example.com | Innovator123! | Submit & view projects |
 
 ---

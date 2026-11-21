@@ -19,7 +19,7 @@ Required environment variables for production:
 NODE_ENV=production
 DATABASE_URL=postgresql://user:password@host:5432/database
 JWT_SECRET=<64-character-random-string>
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=<secure-password>
 PORT=3000
 CORS_ORIGIN=https://yourdomain.com
@@ -44,7 +44,7 @@ heroku addons:create heroku-postgresql:mini
 # 3. Set environment variables
 heroku config:set NODE_ENV=production
 heroku config:set JWT_SECRET=$(node -e "console.log(require('crypto').randomBytes(64).toString('hex'))")
-heroku config:set INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+heroku config:set INITIAL_ADMIN_EMAIL=admin@example.com
 heroku config:set INITIAL_ADMIN_PASSWORD=SecurePassword123!
 heroku config:set CORS_ORIGIN=https://nigeria-aviation-hub.herokuapp.com
 
@@ -76,7 +76,7 @@ heroku open
      ```
      NODE_ENV=production
      JWT_SECRET=<generate-secure-key>
-     INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+     INITIAL_ADMIN_EMAIL=admin@example.com
      INITIAL_ADMIN_PASSWORD=SecurePassword123!
      ```
 
@@ -104,7 +104,7 @@ heroku open
    NODE_ENV=production
    DATABASE_URL=<internal-database-url>
    JWT_SECRET=<generate-secure-key>
-   INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+   INITIAL_ADMIN_EMAIL=admin@example.com
    INITIAL_ADMIN_PASSWORD=SecurePassword123!
    ```
 
@@ -128,7 +128,7 @@ heroku open
      NODE_ENV=production
      DATABASE_URL=${db.DATABASE_URL}
      JWT_SECRET=<generate-secure-key>
-     INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+     INITIAL_ADMIN_EMAIL=admin@example.com
      INITIAL_ADMIN_PASSWORD=SecurePassword123!
      ```
    - Run Command: `npm run db:migrate && npm run db:seed:prod && npm start`
@@ -167,7 +167,7 @@ cat > .env << EOF
 NODE_ENV=production
 DATABASE_URL=postgresql://aviation_user:secure_password@localhost:5432/aviation_hub
 JWT_SECRET=$(node -e "console.log(require('crypto').randomBytes(64).toString('hex'))")
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 PORT=3000
 EOF

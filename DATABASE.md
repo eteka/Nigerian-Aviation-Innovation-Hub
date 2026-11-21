@@ -52,7 +52,7 @@ Create a `.env` file with production settings:
 NODE_ENV=production
 DATABASE_URL=postgresql://aviation_user:your_secure_password@localhost:5432/aviation_hub
 JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 ```
 
@@ -68,7 +68,7 @@ DB_USER=aviation_user
 DB_PASSWORD=your_secure_password
 DB_SSL=false
 JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=SecurePassword123!
 ```
 
@@ -105,7 +105,7 @@ heroku addons:create heroku-postgresql:mini
 # Set environment variables
 heroku config:set NODE_ENV=production
 heroku config:set JWT_SECRET=$(node -e "console.log(require('crypto').randomBytes(64).toString('hex'))")
-heroku config:set INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+heroku config:set INITIAL_ADMIN_EMAIL=admin@example.com
 heroku config:set INITIAL_ADMIN_PASSWORD=SecurePassword123!
 
 # Deploy
@@ -122,7 +122,7 @@ heroku run npm run db:seed:prod
 2. Set environment variables in Railway dashboard:
    - `NODE_ENV=production`
    - `JWT_SECRET=<generate-secure-key>`
-   - `INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng`
+   - `INITIAL_ADMIN_EMAIL=admin@example.com`
    - `INITIAL_ADMIN_PASSWORD=SecurePassword123!`
 3. Railway automatically provides `DATABASE_URL`
 4. Deploy your application
@@ -137,7 +137,7 @@ heroku run npm run db:seed:prod
    - `NODE_ENV=production`
    - `DATABASE_URL=<internal-connection-string>`
    - `JWT_SECRET=<generate-secure-key>`
-   - `INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng`
+   - `INITIAL_ADMIN_EMAIL=admin@example.com`
    - `INITIAL_ADMIN_PASSWORD=SecurePassword123!`
 4. Add build command: `npm install`
 5. Add start command: `npm run db:migrate && npm run db:seed:prod && npm start`

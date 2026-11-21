@@ -21,7 +21,7 @@ const railwayEnv = `NODE_ENV=production
 DATABASE_URL=\${DATABASE_URL}
 PORT=5000
 JWT_SECRET=${jwtSecret}
-INITIAL_ADMIN_EMAIL=admin@aviation.gov.ng
+INITIAL_ADMIN_EMAIL=admin@example.com
 INITIAL_ADMIN_PASSWORD=${adminPassword}
 INITIAL_ADMIN_NAME=System Administrator
 ALLOW_FIRST_ADMIN=true
