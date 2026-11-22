@@ -124,7 +124,7 @@ const validate = (schemaName) => {
       return res.status(400).json({
         error: {
           code: 'VALIDATION_ERROR',
-          message: 'Invalid input data',
+          message: validationErrors.map(e => e.message).join('. '),
           details: validationErrors
         },
         requestId: req.requestId

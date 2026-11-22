@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { projectAPI } from '../utils/api';
+import { errorMessage } from '../utils/errorMessage';
 import './NewProject.css';
 
 const CATEGORIES = ['Aircraft Tech', 'Operations', 'Sustainable Fuel', 'Offsets'];
@@ -54,7 +55,7 @@ function NewProject() {
       const response = await projectAPI.create(formData);
       navigate(`/projects/${response.data.project.id}`);
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to create project');
+      setError(errorMessage(err, 'Failed to create project'));
     } finally {
       setLoading(false);
     }

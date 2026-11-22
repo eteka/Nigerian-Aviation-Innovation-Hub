@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { projectAPI } from '../utils/api';
+import { errorMessage } from '../utils/errorMessage';
 import './ProjectDetail.css';
 
 function ProjectDetail() {
@@ -54,7 +55,7 @@ function ProjectDetail() {
       setIsEditing(false);
       fetchProject();
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to update project');
+      setError(errorMessage(err, 'Failed to update project'));
     }
   };
 

@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "server": "node server/index.js",
+    "test": "cross-env NODE_ENV=test LOG_LEVEL=error node --test \"tests/**/*.test.js\"",
     "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "db:migrate": "node server/db/bootstrap.js",
