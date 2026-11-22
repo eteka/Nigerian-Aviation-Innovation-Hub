@@ -1,25 +1,96 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-naija-ivory via-white to-naija-emerald/10 text-gray-800 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 600;
+  }
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+@layer components {
+  .page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .adire-pattern {
+    background-image:
+      radial-gradient(circle at 25% 25%, #4338ca 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, #6366f1 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+  }
+
+  .contrail-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contrail-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #10b981, transparent);
+    animation: contrail 3s ease-out infinite;
+    animation-delay: 2s;
+  }
+
+  .eagle-glow {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .eagle-glow:hover {
+    box-shadow: 0 0 50px rgba(16, 185, 129, 0.5);
+    transform: translateY(-5px);
+  }
+
+  .harmattan-text {
+    background: linear-gradient(135deg, #f4a460, #008751, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  .contrail-effect::before {
+    animation: none;
+  }
 }

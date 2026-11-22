@@ -10,14 +10,14 @@
 .auth-card {
   background: white;
   padding: 2.5rem;
-  border-radius: 12px;
+  border-radius: 18px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 450px;
 }
 
 .auth-card h1 {
-  color: #1a472a;
+  color: #008751;
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -49,22 +49,22 @@
 .form-group input {
   padding: 0.75rem;
   border: 2px solid #ddd;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #1a472a;
+  border-color: #008751;
 }
 
 .auth-button {
-  background-color: #1a472a;
+  background-color: #008751;
   color: white;
   padding: 0.875rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -73,7 +73,7 @@
 }
 
 .auth-button:hover:not(:disabled) {
-  background-color: #2d6a3e;
+  background-color: #059669;
 }
 
 .auth-button:disabled {
@@ -85,7 +85,7 @@
   background-color: #ffebee;
   color: #c62828;
   padding: 0.875rem;
-  border-radius: 6px;
+  border-radius: 10px;
   border-left: 4px solid #c62828;
   margin-bottom: 1rem;
 }
@@ -97,7 +97,7 @@
 }
 
 .auth-footer a {
-  color: #1a472a;
+  color: #008751;
   font-weight: 600;
   text-decoration: none;
 }
@@ -135,8 +135,8 @@
 .admin-key-section {
   background: #f8f9fa;
   padding: 1rem;
-  border-radius: 6px;
-  border-left: 4px solid #1a472a;
+  border-radius: 10px;
+  border-left: 4px solid #008751;
 }
 
 .first-admin-notice {
@@ -145,8 +145,8 @@
   gap: 1rem;
   padding: 1rem;
   background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
-  border-radius: 6px;
-  border: 1px solid #1a472a;
+  border-radius: 10px;
+  border: 1px solid #008751;
 }
 
 .first-admin-icon {
@@ -154,7 +154,7 @@
 }
 
 .first-admin-notice strong {
-  color: #1a472a;
+  color: #008751;
   display: block;
   margin-bottom: 0.25rem;
 }
@@ -169,7 +169,7 @@
   margin-top: 1.5rem;
   padding: 1rem;
   background: #f8f9fa;
-  border-radius: 6px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -193,14 +193,14 @@
 .dialog-content {
   background: white;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 14px;
   max-width: 400px;
   width: 90%;
   text-align: center;
 }
 
 .dialog-content h3 {
-  color: #1a472a;
+  color: #008751;
   margin-bottom: 1rem;
 }
 
@@ -220,27 +220,28 @@
   color: #374151;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .btn-primary {
-  background: #1a472a;
+  background: #008751;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-}.pe
-nding-request-notice {
+}
+
+.pending-request-notice {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
   background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px solid #ffc107;
   text-align: left;
 }
@@ -267,7 +268,7 @@ nding-request-notice {
   width: 100%;
   padding: 0.75rem;
   border: 2px solid #ddd;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   font-family: inherit;
   resize: vertical;
@@ -276,7 +277,7 @@ nding-request-notice {
 
 .auth-form textarea:focus {
   outline: none;
-  border-color: #1a472a;
+  border-color: #008751;
 }
 
 .auth-form small {
