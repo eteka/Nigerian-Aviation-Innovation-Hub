@@ -6,22 +6,22 @@
 }
 
 .projects-header h1 {
-  color: #1a472a;
+  color: #008751;
   margin: 0;
 }
 
 .btn-primary {
-  background-color: #1a472a;
+  background-color: #008751;
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #2d6a3e;
+  background-color: #059669;
 }
 
 .category-filter {
@@ -35,21 +35,21 @@
   padding: 0.5rem 1rem;
   border: 2px solid #ddd;
   background-color: white;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-  border-color: #1a472a;
-  color: #1a472a;
+  border-color: #008751;
+  color: #008751;
 }
 
 .filter-btn.active {
-  background-color: #1a472a;
+  background-color: #008751;
   color: white;
-  border-color: #1a472a;
+  border-color: #008751;
 }
 
 .projects-grid {
@@ -61,7 +61,7 @@
 .project-card {
   background: white;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 1.5rem;
   text-decoration: none;
   color: inherit;
@@ -74,7 +74,7 @@
 .project-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
-  border-color: #1a472a;
+  border-color: #008751;
 }
 
 .project-card-header {
@@ -85,7 +85,7 @@
 }
 
 .project-card-header h3 {
-  color: #1a472a;
+  color: #008751;
   margin: 0;
   font-size: 1.25rem;
   flex: 1;
@@ -93,7 +93,7 @@
 
 .category-pill {
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  border-radius: 18px;
   font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
@@ -127,7 +127,7 @@
 
 .status-badge {
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  border-radius: 18px;
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -161,7 +161,7 @@
 }
 
 .no-projects a {
-  color: #1a472a;
+  color: #008751;
   font-weight: 600;
 }
 

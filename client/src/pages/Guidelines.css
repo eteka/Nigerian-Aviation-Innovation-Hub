@@ -4,7 +4,7 @@
 }
 
 .guidelines-header h1 {
-  color: #1a472a;
+  color: #008751;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -27,7 +27,7 @@
 .guideline-card {
   background: white;
   border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 2rem;
   text-decoration: none;
   color: inherit;
@@ -39,7 +39,7 @@
 }
 
 .guideline-card:hover {
-  border-color: #1a472a;
+  border-color: #008751;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
@@ -50,7 +50,7 @@
 }
 
 .guideline-card h2 {
-  color: #1a472a;
+  color: #008751;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -63,13 +63,13 @@
 }
 
 .read-more {
-  color: #1a472a;
+  color: #008751;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
 .guideline-card:hover .read-more {
-  color: #2d6a3e;
+  color: #059669;
 }
 
 .guidelines-footer {
@@ -78,13 +78,13 @@
 
 .info-box {
   background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
-  border-left: 4px solid #1a472a;
+  border-left: 4px solid #008751;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .info-box h3 {
-  color: #1a472a;
+  color: #008751;
   margin-bottom: 1rem;
 }
 
