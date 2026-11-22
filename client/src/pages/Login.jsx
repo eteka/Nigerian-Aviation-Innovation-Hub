@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { errorMessage } from '../utils/errorMessage';
 import './Auth.css';
 
 function Login() {
@@ -41,7 +42,7 @@ function Login() {
         navigate('/');
       }
     } catch (err) {
-      setError(err.response?.data?.error || 'Login failed. Please try again.');
+      setError(errorMessage(err, 'Login failed. Please try again.'));
     } finally {
       setLoading(false);
     }

@@ -151,12 +151,16 @@ app.use('*', notFoundHandler);
 // Global error handler
 app.use(errorHandler);
 
-// Start server
-app.listen(PORT, () => {
-  logInfo('Server started', { 
-    port: PORT, 
-    environment: process.env.NODE_ENV || 'development',
-    timestamp: new Date().toISOString()
+// Start server (tests import the app and listen on their own port)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    logInfo('Server started', { 
+      port: PORT, 
+      environment: process.env.NODE_ENV || 'development',
+      timestamp: new Date().toISOString()
+    });
+    console.log(`🚀 Server is running on port ${PORT}`);
   });
-  console.log(`🚀 Server is running on port ${PORT}`);
-});
+}
+
+module.exports = app;

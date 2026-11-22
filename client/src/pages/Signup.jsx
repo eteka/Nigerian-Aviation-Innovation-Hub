@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../utils/api';
+import { errorMessage } from '../utils/errorMessage';
 import './Auth.css';
 
 function Signup() {
@@ -46,8 +47,8 @@ function Signup() {
       return;
     }
 
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters');
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters');
       return;
     }
 
@@ -58,7 +59,7 @@ function Signup() {
       
       if (adminRequested) {
         registrationData.adminRequested = true;
-        if (hasAdmin || !process.env.ALLOW_FIRST_ADMIN) {
+        if (hasAdmin) {
           registrationData.adminKey = adminKey;
         }
       }
@@ -75,7 +76,7 @@ function Signup() {
       if (err.response?.data?.error?.code === 'ADMIN_KEY_INVALID') {
         setError('Invalid Admin Access Key');
       } else {
-        setError(err.response?.data?.error || 'Registration failed. Please try again.');
+        setError(errorMessage(err, 'Registration failed. Please try again.'));
       }
     } finally {
       setLoading(false);
@@ -123,7 +124,7 @@ function Signup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              placeholder="At least 6 characters"
+              placeholder="At least 8 characters"
             />
           </div>
 

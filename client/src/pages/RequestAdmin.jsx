@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../utils/api';
+import { errorMessage } from '../utils/errorMessage';
 import Toast from '../components/Toast';
 import './Auth.css';
 
@@ -42,7 +43,7 @@ function RequestAdmin() {
         setToast({ message: 'You already have a pending admin request', type: 'error' });
         setHasPendingRequest(true);
       } else {
-        setToast({ message: err.response?.data?.error || 'Failed to submit request', type: 'error' });
+        setToast({ message: errorMessage(err, 'Failed to submit request'), type: 'error' });
       }
     } finally {
       setLoading(false);

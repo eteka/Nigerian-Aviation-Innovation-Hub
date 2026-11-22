@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { adminAPI } from '../utils/api';
+import { errorMessage } from '../utils/errorMessage';
 import Toast from '../components/Toast';
 import './Admin.css';
 
@@ -135,7 +136,7 @@ function Admin() {
     } catch (error) {
       // Revert on error
       setUsers(originalUsers);
-      showToast(error.response?.data?.error || 'Failed to update user role', 'error');
+      showToast(errorMessage(error, 'Failed to update user role'), 'error');
     }
   };
 
