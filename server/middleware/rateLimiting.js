@@ -2,7 +2,14 @@ const rateLimit = require('express-rate-limit');
 const { logWarn } = require('../utils/logger');
 
 // Default rate limiter (100 requests per 15 minutes)
+// Read-only "who am I / is there an admin / give me a CSRF token" questions are asked on every
+// page load, so they must not use up the allowance meant for password guessing.
+const PAGE_LOAD_PATHS = new Set(['/api/auth/me', '/api/auth/has-admin', '/api/v1/csrf']);
+const isPageLoadCheck = (req) =>
+  req.method === 'GET' && PAGE_LOAD_PATHS.has((req.originalUrl || req.url).split('?')[0]);
+
 const defaultLimiter = rateLimit({
+  skip: isPageLoadCheck,
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per windowMs
   message: {
@@ -32,6 +39,7 @@ const defaultLimiter = rateLimit({
 
 // Stricter rate limiter for auth endpoints (20 requests per 15 minutes)
 const authLimiter = rateLimit({
+  skip: isPageLoadCheck,
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 20, // Limit each IP to 20 requests per windowMs for auth endpoints
   message: {

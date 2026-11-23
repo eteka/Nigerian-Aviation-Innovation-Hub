@@ -10,6 +10,7 @@ const api = axios.create({
 
 // CSRF token management
 let csrfToken = null;
+let currentUserRequest = null;
 
 // Function to get CSRF token from cookie
 const getCSRFTokenFromCookie = () => {
@@ -78,7 +79,13 @@ export const authAPI = {
   register: (data) => api.post('/auth/register', data),
   login: (data) => api.post('/auth/login', data),
   logout: () => api.post('/auth/logout'),
-  getCurrentUser: () => api.get('/auth/me'),
+  getCurrentUser: () => {
+    // Share one in-flight request so a page load asks the server once (React StrictMode runs effects twice in dev).
+    if (!currentUserRequest) {
+      currentUserRequest = api.get('/auth/me').finally(() => { currentUserRequest = null; });
+    }
+    return currentUserRequest;
+  },
   hasAdmin: () => api.get('/auth/has-admin'),
   requestAdmin: (data) => api.post('/auth/request-admin', data)
 };

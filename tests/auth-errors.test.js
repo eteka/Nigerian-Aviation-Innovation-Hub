@@ -82,3 +82,26 @@ test('sign-up form says 8 characters and does not read process.env', () => {
   assert.doesNotMatch(src, /At least 6|< 6/);
   assert.doesNotMatch(src, /process\.env/);
 });
+
+// --- T2: page-load checks must not lock people out of signing in ---
+test('40 page-load checks of each kind do not stop a new account from registering', async () => {
+  for (const url of ['/api/auth/me', '/api/auth/has-admin', '/api/v1/csrf']) {
+    for (let i = 0; i < 40; i++) {
+      const r = await fetch(`${base}${url}`, { headers: { Cookie: cookie } });
+      assert.notEqual(r.status, 429, `${url} request ${i + 1} was rate limited`);
+    }
+  }
+  const { status } = await post('/api/auth/register', {
+    name: 'Page Browser', email: 'browser@example.com', password: 'a-long-password-1',
+  });
+  assert.equal(status, 201);
+});
+
+test('the 21st wrong-password login is still refused with the rate-limit message', async () => {
+  let last;
+  for (let i = 0; i < 21; i++) {
+    last = await post('/api/auth/login', { email: 'nobody@example.com', password: 'wrong-password-1' });
+  }
+  assert.equal(last.status, 429);
+  assert.match(last.body.error.message, /Too many authentication attempts/);
+});
