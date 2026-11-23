@@ -1,0 +1,177 @@
+{
+  "area": "sustainable-fuel",
+  "area_name": "Sustainable Fuel",
+  "area_description": "Making, supplying and approving sustainable aviation fuel.",
+  "idea_types": [
+    {
+      "id": "saf-production",
+      "name": "SAF production",
+      "description": "Making sustainable aviation fuel from waste, plants or other sources, for example turning used cooking oil into jet fuel.",
+      "also_called": [
+        "sustainable aviation fuel",
+        "biojet",
+        "biofuel",
+        "used cooking oil to jet fuel",
+        "renewable jet fuel",
+        "green jet fuel"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ASTM International",
+          "document": "ASTM D7566 - Specification for Aviation Turbine Fuel Containing Synthesized Hydrocarbons",
+          "why_it_applies": "The fuel standard a synthetic or bio-based jet fuel must meet before it can be blended and used.",
+          "source_url": "https://www.astm.org/d7566-24.html"
+        },
+        {
+          "issuing_body": "ASTM International",
+          "document": "ASTM D4054 - Practice for Evaluation of New Aviation Turbine Fuels and Fuel Additives",
+          "why_it_applies": "The route a new fuel follows to be tested and approved for aircraft use.",
+          "source_url": "https://www.astm.org/d4054-24.html"
+        },
+        {
+          "issuing_body": "ASTM International",
+          "document": "ASTM D1655 - Specification for Aviation Turbine Fuels",
+          "why_it_applies": "The base standard for the jet fuel that blends are mixed into and that airlines buy.",
+          "source_url": "https://www.astm.org/d1655-24.html"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA Eligible Fuels, including the CORSIA Sustainability Criteria and Life Cycle Assessment Methodology",
+          "why_it_applies": "Lists which fuels count under CORSIA and the sustainability and life-cycle rules they must meet.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/CORSIA-Eligible-Fuels.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Sustainable Aviation Fuels (SAF) guidance and ICAO CAAF framework",
+          "why_it_applies": "Describes ICAO's framework for sustainable aviation fuels and how they are counted.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/SAF.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the process and the fuel pathway",
+        "Feedstock source, quantity and how it is traced",
+        "Life-cycle emissions estimate with method",
+        "Plan to test the fuel against the standard",
+        "Production volume and timeline",
+        "Sustainability evidence for the feedstock",
+        "Who will buy or blend the fuel"
+      ],
+      "reviewer_questions": [
+        "Which approved production pathway does your process follow?",
+        "Where does the feedstock come from, and can it be traced?",
+        "How much lower are life-cycle emissions, and how were they calculated?",
+        "Has the fuel been tested against the standard?",
+        "How much can you really produce, and when?",
+        "Who will buy it?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "saf-feedstock",
+      "name": "SAF feedstock supply",
+      "description": "Collecting or growing the raw material that sustainable fuel is made from, such as used oil, crop residue or waste.",
+      "also_called": [
+        "used cooking oil",
+        "agricultural residue",
+        "waste oil",
+        "feedstock collection",
+        "biomass supply",
+        "non-food crops"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA Eligible Fuels, including the CORSIA Sustainability Criteria and Life Cycle Assessment Methodology",
+          "why_it_applies": "Lists which fuels count under CORSIA and the sustainability and life-cycle rules they must meet.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/CORSIA-Eligible-Fuels.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Sustainable Aviation Fuels (SAF) guidance and ICAO CAAF framework",
+          "why_it_applies": "Describes ICAO's framework for sustainable aviation fuels and how they are counted.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/SAF.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the material and its source",
+        "Quantity available each month or year",
+        "How collection and storage work",
+        "Evidence that it does not harm food, land or forests",
+        "Traceability records",
+        "Quality checks",
+        "Buyers or fuel producers you can supply"
+      ],
+      "reviewer_questions": [
+        "Where exactly does the material come from?",
+        "Does collecting it compete with food or damage land?",
+        "How can a buyer verify its origin?",
+        "How much is available, reliably?",
+        "Which fuel producers could use it?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "saf-blending-logistics",
+      "name": "SAF blending and airport fuel supply",
+      "description": "Moving, storing and blending sustainable fuel with regular jet fuel so it reaches aircraft at the airport.",
+      "also_called": [
+        "fuel blending",
+        "fuel farm",
+        "fuel storage",
+        "fuel supply chain",
+        "into-plane"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ASTM International",
+          "document": "ASTM D1655 - Specification for Aviation Turbine Fuels",
+          "why_it_applies": "The base standard for the jet fuel that blends are mixed into and that airlines buy.",
+          "source_url": "https://www.astm.org/d1655-24.html"
+        },
+        {
+          "issuing_body": "ASTM International",
+          "document": "ASTM D7566 - Specification for Aviation Turbine Fuel Containing Synthesized Hydrocarbons",
+          "why_it_applies": "The fuel standard a synthetic or bio-based jet fuel must meet before it can be blended and used.",
+          "source_url": "https://www.astm.org/d7566-24.html"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA Eligible Fuels, including the CORSIA Sustainability Criteria and Life Cycle Assessment Methodology",
+          "why_it_applies": "Lists which fuels count under CORSIA and the sustainability and life-cycle rules they must meet.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/CORSIA-Eligible-Fuels.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 14 - Aerodromes",
+          "why_it_applies": "Sets the standards for airfields and what may be built or operated on them.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the supply chain from producer to aircraft",
+        "Quality control and testing steps",
+        "Storage and handling safety",
+        "Records that keep SAF separate from fossil fuel",
+        "Capacity and volumes",
+        "Fire and spill safety at the airport"
+      ],
+      "reviewer_questions": [
+        "How do you keep fuel quality within the standard?",
+        "How is SAF tracked from producer to aircraft?",
+        "What safety measures are in place for storage and handling?",
+        "What volumes can you handle?",
+        "Who certifies the blended fuel?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    }
+  ]
+}

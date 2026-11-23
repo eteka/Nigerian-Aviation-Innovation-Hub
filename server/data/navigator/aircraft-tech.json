@@ -1,0 +1,175 @@
+{
+  "area": "aircraft-tech",
+  "area_name": "Aircraft Tech",
+  "area_description": "New aircraft, engines, drones and on-board technology.",
+  "idea_types": [
+    {
+      "id": "electric-aircraft",
+      "name": "Electric or hybrid-electric aircraft",
+      "description": "An aircraft that flies partly or fully on batteries or other electric power instead of jet or piston fuel.",
+      "also_called": [
+        "electric plane",
+        "battery aircraft",
+        "hybrid electric",
+        "eVTOL",
+        "electric air taxi"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 8 - Airworthiness of Aircraft",
+          "why_it_applies": "Sets the airworthiness basis a new or modified aircraft must satisfy before it can fly.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 16 Volume I and II - Aircraft Noise and Engine Emissions",
+          "why_it_applies": "Sets the noise and engine emissions limits a new engine or aircraft design is certified against.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/technology-standards.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 6 - Operation of Aircraft",
+          "why_it_applies": "Sets how aircraft may be operated, which governs any change to how flights are planned or flown.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "A written description of the aircraft, its mission and its range",
+        "Battery or power system data, including safety and fire protection",
+        "A plan for how airworthiness will be shown",
+        "Noise estimate for take-off and landing",
+        "Charging or energy supply plan at the airfield",
+        "Flight test plan with safety limits",
+        "Pilot training and operating limits"
+      ],
+      "reviewer_questions": [
+        "What range and payload do you honestly expect, and how was it measured?",
+        "How will you show the battery system is safe in a failure?",
+        "How does the design meet airworthiness requirements?",
+        "What happens to the aircraft if power is lost?",
+        "Who will operate it and how will they be trained?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "drones",
+      "name": "Drones and unmanned aircraft",
+      "description": "An aircraft flown without a pilot on board, remotely or autonomously, for example for delivery, survey or inspection.",
+      "also_called": [
+        "UAV",
+        "UAS",
+        "RPAS",
+        "quadcopter",
+        "delivery drone",
+        "survey drone"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Unmanned aircraft systems guidance, including Doc 10019 Manual on Remotely Piloted Aircraft Systems",
+          "why_it_applies": "Collects ICAO's international guidance for unmanned aircraft and remotely piloted aircraft.",
+          "source_url": "https://www.icao.int/safety/UA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 2 - Rules of the Air",
+          "why_it_applies": "Sets the common rules every aircraft must follow in the air.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 8 - Airworthiness of Aircraft",
+          "why_it_applies": "Sets the airworthiness basis a new or modified aircraft must satisfy before it can fly.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 17 - Aviation Security",
+          "why_it_applies": "Sets security standards that apply to airports, aircraft and anything used on them.",
+          "source_url": "https://www.icao.int/aviationsecurity/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the drone, its weight and what it carries",
+        "Intended use and where it will fly",
+        "How the remote pilot controls it and what happens if the link is lost",
+        "Plan to avoid people, buildings and other aircraft",
+        "Security plan for data and control link",
+        "Pilot training plan",
+        "Test flight record"
+      ],
+      "reviewer_questions": [
+        "Where and at what height will it fly?",
+        "What happens if the control link or battery fails?",
+        "How do you keep it away from crewed aircraft and people?",
+        "Who is responsible when it is flying?",
+        "How is the data it collects protected?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "efficiency-technology",
+      "name": "Aircraft efficiency technology",
+      "description": "A device, material or design change that lets an aircraft burn less fuel, such as lighter parts, better wings or engine upgrades.",
+      "also_called": [
+        "lightweight materials",
+        "winglets",
+        "engine upgrade",
+        "fuel saving device",
+        "retrofit"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 16 Volume III - Aeroplane CO2 Emissions Standard",
+          "why_it_applies": "Sets the CO2 efficiency standard that new aeroplane types must meet.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/technology-standards.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 16 Volume I and II - Aircraft Noise and Engine Emissions",
+          "why_it_applies": "Sets the noise and engine emissions limits a new engine or aircraft design is certified against.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/technology-standards.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 8 - Airworthiness of Aircraft",
+          "why_it_applies": "Sets the airworthiness basis a new or modified aircraft must satisfy before it can fly.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the change and the aircraft it fits",
+        "Measured or modelled fuel saving, with method",
+        "Effect on noise and engine emissions",
+        "Weight and balance impact",
+        "Plan to show the change is airworthy",
+        "Cost and installation time per aircraft"
+      ],
+      "reviewer_questions": [
+        "How much fuel does it really save, and how do you know?",
+        "Does it change noise or engine emissions?",
+        "How will the change be certified as safe?",
+        "What does it cost to fit and maintain?",
+        "Which aircraft types can use it?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "area": "offsets",
+  "area_name": "Offsets",
+  "area_description": "Carbon offsetting and emissions reporting for international flights.",
+  "idea_types": [
+    {
+      "id": "corsia-offsetting",
+      "name": "CORSIA offsetting",
+      "description": "Helping airlines meet CORSIA by supplying or managing eligible emissions units that offset growth in international flight emissions.",
+      "also_called": [
+        "carbon offsets",
+        "carbon credits",
+        "CORSIA units",
+        "offset supply",
+        "emissions units"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA - Carbon Offsetting and Reduction Scheme for International Aviation",
+          "why_it_applies": "Explains the global scheme that makes airlines offset growth in international CO2 emissions.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 16 Volume IV - CORSIA",
+          "why_it_applies": "Contains the CORSIA standards for monitoring, reporting, verification and offsetting.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA Eligible Emissions Units",
+          "why_it_applies": "Lists the emissions units that airlines may use to meet CORSIA offsetting requirements.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/CORSIA-Emissions-Units.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Market-based measures",
+          "why_it_applies": "Explains the international approach to market-based measures such as offsetting.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/market-based-measures.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the offset activity and what it removes or avoids",
+        "Evidence the activity is eligible under CORSIA",
+        "Registry or programme the units would come from",
+        "How the reduction is measured and verified",
+        "Plan to avoid double counting",
+        "Expected volume of units and timeline"
+      ],
+      "reviewer_questions": [
+        "Is the programme and activity on the CORSIA eligible list?",
+        "How are reductions measured and verified?",
+        "How do you prevent the same reduction being counted twice?",
+        "What is the permanence risk?",
+        "How many units can you deliver, and when?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "emissions-reporting-tool",
+      "name": "Emissions monitoring and reporting tool",
+      "description": "Software or services that help airlines track fuel use and report CO2 emissions the way CORSIA requires.",
+      "also_called": [
+        "emissions calculator",
+        "MRV",
+        "carbon accounting",
+        "fuel tracking",
+        "CO2 reporting"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 16 Volume IV - CORSIA",
+          "why_it_applies": "Contains the CORSIA standards for monitoring, reporting, verification and offsetting.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA - Carbon Offsetting and Reduction Scheme for International Aviation",
+          "why_it_applies": "Explains the global scheme that makes airlines offset growth in international CO2 emissions.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of what the tool measures and reports",
+        "Which CORSIA reporting steps it supports",
+        "Fuel and flight data it needs",
+        "Accuracy checks and audit trail",
+        "Data protection and security",
+        "Plan to test it with a real airline's data"
+      ],
+      "reviewer_questions": [
+        "Which CORSIA requirements does it cover?",
+        "How accurate is the data, and how is that proved?",
+        "Can a verifier audit the numbers?",
+        "How is airline data protected?",
+        "What does an airline need to provide to use it?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "offset-project-development",
+      "name": "Offset project development",
+      "description": "Building a project, such as forest protection or clean cooking, that could produce emissions units that airlines may buy.",
+      "also_called": [
+        "carbon project",
+        "forest carbon",
+        "clean cooking",
+        "carbon credit project",
+        "emissions reduction project"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA Eligible Emissions Units",
+          "why_it_applies": "Lists the emissions units that airlines may use to meet CORSIA offsetting requirements.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/CORSIA-Emissions-Units.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "CORSIA - Carbon Offsetting and Reduction Scheme for International Aviation",
+          "why_it_applies": "Explains the global scheme that makes airlines offset growth in international CO2 emissions.",
+          "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Market-based measures",
+          "why_it_applies": "Explains the international approach to market-based measures such as offsetting.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/market-based-measures.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the project and where it takes place",
+        "Baseline: what would happen without the project",
+        "How reductions will be measured",
+        "Which programme or registry you would join",
+        "Plan for long-term permanence",
+        "Benefits and risks for local people",
+        "Timeline to first units"
+      ],
+      "reviewer_questions": [
+        "Would the reduction happen anyway without the project?",
+        "How will it be measured and independently verified?",
+        "Which programme would issue the units?",
+        "How do you protect against reversal?",
+        "How do local communities benefit?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    }
+  ]
+}

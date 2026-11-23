@@ -1,0 +1,166 @@
+{
+  "area": "operations",
+  "area_name": "Operations",
+  "area_description": "Changes to how flights, airports and air traffic are run.",
+  "idea_types": [
+    {
+      "id": "flight-ops-efficiency",
+      "name": "Flight-operations efficiency",
+      "description": "A tool or method that helps airlines fly with less fuel, such as better route planning, weight management or fuel planning.",
+      "also_called": [
+        "fuel saving software",
+        "route optimisation",
+        "flight planning",
+        "fuel efficiency",
+        "operations software"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 6 - Operation of Aircraft",
+          "why_it_applies": "Sets how aircraft may be operated, which governs any change to how flights are planned or flown.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 2 - Rules of the Air",
+          "why_it_applies": "Sets the common rules every aircraft must follow in the air.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 11 - Air Traffic Services",
+          "why_it_applies": "Sets how air traffic services work, which matters for any change that affects routes, climbs or descents.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Plain description of what the tool changes in a flight",
+        "Fuel or CO2 saving, with data and method",
+        "Which airline roles use it and when",
+        "Safety review of the change",
+        "Data sources and how reliable they are",
+        "Plan to test it on a few flights first"
+      ],
+      "reviewer_questions": [
+        "How much fuel does it save per flight, measured how?",
+        "Does the change affect safety margins?",
+        "Who in the airline has to change what they do?",
+        "How good is the data it relies on?",
+        "What happens when it gives a bad suggestion?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "airport-ground-ops",
+      "name": "Airport and ground operations",
+      "description": "Equipment or methods used on the ground, such as electric ground vehicles, airport energy systems or faster turnaround.",
+      "also_called": [
+        "ground support equipment",
+        "electric tug",
+        "airport solar",
+        "turnaround",
+        "apron"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 14 - Aerodromes",
+          "why_it_applies": "Sets the standards for airfields and what may be built or operated on them.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 17 - Aviation Security",
+          "why_it_applies": "Sets security standards that apply to airports, aircraft and anything used on them.",
+          "source_url": "https://www.icao.int/aviationsecurity/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the equipment or method",
+        "Where on the airport it would be used",
+        "Safety on the apron and near aircraft",
+        "Security checks for people and items involved",
+        "Energy or emissions saved, with data",
+        "Power or charging needs"
+      ],
+      "reviewer_questions": [
+        "Does it fit safely among aircraft and vehicles?",
+        "How are people and items using it security-checked?",
+        "What emissions or fuel does it save?",
+        "What does the airport need to install?",
+        "Who maintains it?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    },
+    {
+      "id": "air-traffic-improvement",
+      "name": "Air traffic and airspace improvements",
+      "description": "Ideas that make flights shorter or smoother, such as new approach or climb procedures and better use of airspace.",
+      "also_called": [
+        "continuous descent",
+        "direct routes",
+        "airspace design",
+        "approach procedure",
+        "traffic management"
+      ],
+      "rules": [
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 11 - Air Traffic Services",
+          "why_it_applies": "Sets how air traffic services work, which matters for any change that affects routes, climbs or descents.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 2 - Rules of the Air",
+          "why_it_applies": "Sets the common rules every aircraft must follow in the air.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Annex 6 - Operation of Aircraft",
+          "why_it_applies": "Sets how aircraft may be operated, which governs any change to how flights are planned or flown.",
+          "source_url": "https://www.icao.int/safety/airnavigation/Pages/default.aspx"
+        },
+        {
+          "issuing_body": "ICAO",
+          "document": "Environmental protection: aviation and the environment overview",
+          "why_it_applies": "Explains ICAO's environmental work and how its measures fit together.",
+          "source_url": "https://www.icao.int/environmental-protection/Pages/default.aspx"
+        }
+      ],
+      "readiness_checklist": [
+        "Description of the procedure or tool",
+        "Which airspace or airports it covers",
+        "Fuel and time saved, with method",
+        "Safety assessment",
+        "Who must agree to it",
+        "Plan to test or simulate it"
+      ],
+      "reviewer_questions": [
+        "Who controls the airspace this changes?",
+        "How is safety shown to be maintained?",
+        "How were the savings calculated?",
+        "What training would controllers and pilots need?",
+        "Can it be tested before live use?"
+      ],
+      "national_requirements": "Check with your civil aviation authority for the national requirements that also apply.",
+      "reviewed": false
+    }
+  ]
+}
